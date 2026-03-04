@@ -1,14 +1,27 @@
 extends layout
 
 block content
-  h1 Demo Login
-  form(method='POST')
-    .form-group
-      label Email
-      input.form-control(name='email' required value='test@example.com')
-
-    .form-group
-      label Password
-      input.form-control(name='password' type='password' required value='123456')
-
-    button.btn.btn-primary(type='submit') Login
+  .login-card
+    .login-header
+      i.fa-solid.fa-paw.login-icon
+      h1 Welcome Back
+      p Access the Pet Store Doc Portal
+      
+    form(method='POST')
+      .input-group
+        input.form-control(type='email' name='email' id='email' required placeholder=' ' value='test@example.com')
+        i.fa-regular.fa-envelope
+        label.input-label(for='email') Email Address
+        
+      .input-group
+        input.form-control(type='password' name='password' id='password' required placeholder=' ' value='123456')
+        i.fa-solid.fa-lock
+        label.input-label(for='password') Password
+        
+      button.btn-primary(type='submit') 
+        span Login to Portal
+        i.fa-solid.fa-arrow-right(style='margin-left: 8px;')
+        
+    .footer-text
+      | Need help? 
+      a(href='#') Contact Support
